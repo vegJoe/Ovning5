@@ -1,7 +1,7 @@
 ﻿using System.Drawing;
 using System.Security.Cryptography.X509Certificates;
-using G = Ovning5.Garage;
 using V = Ovning5.Vehicle;
+using Ovning5.Garage;
 
 namespace Ovning5.Ovning5_Manager
 {
@@ -9,7 +9,7 @@ namespace Ovning5.Ovning5_Manager
     {
         private int _command;
 
-        private G.GarageHandler? handler;
+        private GarageHandler? handler;
         UI.UI UI = new UI.UI();
         private V.Vehicle? _vehicle;
         private int _vehicleIndex;
@@ -19,7 +19,7 @@ namespace Ovning5.Ovning5_Manager
         {
             if (handler == null)
             {
-                handler = new G.GarageHandler();
+                handler = new GarageHandler();
                 handler.RunGarageHandler();
             }
 

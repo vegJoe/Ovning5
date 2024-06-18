@@ -1,7 +1,4 @@
 ﻿using Ovning5.Ovning5_Manager;
-using Ovning5.Garage;
-using V = Ovning5.Vehicle;
-using UI = Ovning5.UI;
 using System.Runtime.CompilerServices;
 
 namespace Ovning5

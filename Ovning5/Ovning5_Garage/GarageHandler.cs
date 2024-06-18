@@ -1,11 +1,10 @@
-﻿using V = Ovning5.Vehicle;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using G = Ovning5.Garage;
 using System.Formats.Tar;
+using V = Ovning5.Vehicle;
 
 namespace Ovning5.Garage
 {
@@ -157,7 +156,7 @@ namespace Ovning5.Garage
         private void AddVehicle(V.Vehicle vehicle)
         {
             if (vehicle.Colour != null && vehicle.NumPlate != "")
-                _vehicleIndex = _garage!.Add(vehicle);
+                _vehicleIndex = _garage!.AddVehicle(vehicle);
             else
                 _vehicleIndex = -1;
         }
@@ -175,7 +174,7 @@ namespace Ovning5.Garage
                         foreach (var vehicle in iVehicle)
                         {
                             _vehicleIndex = _garage!.FindVehicle(vehicle);
-                            _garage!.Remove(_vehicleIndex);
+                            _garage!.RemoveVehicle(_vehicleIndex);
                         }
                     }
                     else

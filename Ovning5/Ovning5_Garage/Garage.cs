@@ -7,7 +7,6 @@ using System.Net.Http.Headers;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-using V = Ovning5.Vehicle;
 
 namespace Ovning5.Garage
 {
@@ -25,7 +24,7 @@ namespace Ovning5.Garage
         /*
          * Method that takes vehicle object and adds it to first space in Garage array that is null
          */
-        public int Add(T vehicle)
+        public int AddVehicle(T vehicle)
         {
             int i = 0;
 
@@ -51,7 +50,7 @@ namespace Ovning5.Garage
         /*
          * Takes index and clears any object that is on that position in Array
          */
-        public void Remove(int vehicleIndex)
+        public void RemoveVehicle(int vehicleIndex)
         {
             Array.Clear(_garage, vehicleIndex, 1);
         }
