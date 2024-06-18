@@ -26,6 +26,8 @@ namespace Ovning5.UI
         {
             if (parkingSpot == -1)
                 WL("Could not park the vehicle do to insufficient vehicle information");
+            else if (parkingSpot == -2)
+                WL("Garage is full, could not park vehicle");
             else
                 WL($"Vehicle is parked on spot nr {parkingSpot}");
 

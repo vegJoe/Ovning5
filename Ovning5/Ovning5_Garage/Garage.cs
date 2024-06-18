@@ -22,6 +22,9 @@ namespace Ovning5.Garage
         public int GarageSize() { return _garage!.Length; }
         public Type GarageTyp() { return typeof(T); }
 
+        /*
+         * Method that takes vehicle object and adds it to first space in Garage array that is null
+         */
         public int Add(T vehicle)
         {
             int i = 0;
@@ -36,11 +39,18 @@ namespace Ovning5.Garage
             }
             return i;
         }
+
+        /*
+         * Takes a vehicle object and checks array and returns the index position of vehicle object
+         */
         public int FindVehicle(T? vehicle)
         {
             return Array.IndexOf(_garage!, vehicle);
         }
 
+        /*
+         * Takes index and clears any object that is on that position in Array
+         */
         public void Remove(int vehicleIndex)
         {
             Array.Clear(_garage!, vehicleIndex, 1);

@@ -37,6 +37,11 @@ namespace Ovning5.Garage
             }
         }
 
+        public int GarageSize()
+        {
+            return _garage!.GarageSize();
+        }
+
         public int GetCommand(int command, V.Vehicle vehicle)
         {
             _vehicle = vehicle;
@@ -107,6 +112,8 @@ namespace Ovning5.Garage
                     {
                         Console.WriteLine(vehicle);
                     }
+
+                    Thread.Sleep(5000);
                 }
                 else
                     _vehicleIndex = -1;
@@ -216,7 +223,7 @@ namespace Ovning5.Garage
             {
                 foreach (var vehicle in iVehicle)
                 {
-                    Console.WriteLine(vehicle.NumPlate);
+                    Console.WriteLine(vehicle.GetType().Name + ": " + vehicle.NumPlate);
                 }
                 Thread.Sleep(5000);
             }

@@ -117,7 +117,11 @@ namespace Ovning5.Ovning5_Manager
             {
                 VehicleType(vType);
                 _vehicleIndex = handler!.GetCommand(_command, _vehicle!);
+
+                if (_vehicleIndex == handler.GarageSize())
+                    _vehicleIndex = -2;
             }
+            
 
             UI.ParkedVehicle(_vehicleIndex);
         }
