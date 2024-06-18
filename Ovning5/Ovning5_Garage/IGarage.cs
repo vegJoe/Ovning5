@@ -6,9 +6,7 @@ namespace Ovning5.Garage
         int Add(T vehicle);
         int FindVehicle(T? vehicle);
         int GarageSize();
-        //Type GarageTyp();
         IEnumerator<T> GetEnumerator();
         void Remove(int vehicleIndex);
-        void Size(int size);
     }
 }

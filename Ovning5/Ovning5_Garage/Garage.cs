@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Net.Http.Headers;
 using System.Reflection;
@@ -12,15 +13,14 @@ namespace Ovning5.Garage
 {
     public class Garage<T> : IEnumerable<T>, IGarage<T>
     {
-        private T[]? _garage;
+        private T[] _garage;
 
-        public void Size(int size)
+        public Garage(int garageSize)
         {
-            _garage = new T[size];
+            _garage = new T[garageSize];
         }
 
-        public int GarageSize() { return _garage!.Length; }
-        //public Type GarageTyp() { return typeof(T); }
+        public int GarageSize() { return _garage.Length;}
 
         /*
          * Method that takes vehicle object and adds it to first space in Garage array that is null
@@ -29,11 +29,11 @@ namespace Ovning5.Garage
         {
             int i = 0;
 
-            for (i = 0; i < _garage!.Length; i++)
+            for (i = 0; i < _garage.Length; i++)
             {
                 if (_garage[i] == null)
                 {
-                    _garage![i] = vehicle;
+                    _garage[i] = vehicle;
                     break;
                 }
             }
@@ -45,7 +45,7 @@ namespace Ovning5.Garage
          */
         public int FindVehicle(T? vehicle)
         {
-            return Array.IndexOf(_garage!, vehicle);
+            return Array.IndexOf(_garage, vehicle);
         }
 
         /*
@@ -53,12 +53,12 @@ namespace Ovning5.Garage
          */
         public void Remove(int vehicleIndex)
         {
-            Array.Clear(_garage!, vehicleIndex, 1);
+            Array.Clear(_garage, vehicleIndex, 1);
         }
 
         public IEnumerator<T> GetEnumerator()
         {
-            foreach (var item in _garage!)
+            foreach (var item in _garage)
             {
                 if (item != null)
                     yield return item;

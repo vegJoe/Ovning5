@@ -24,7 +24,6 @@ namespace Ovning5.Garage
             if (_garage == null)
             {
                 int garageSize;
-                _garage = new Garage<V.Vehicle>();
                 bool correctInput = false;
 
                 do
@@ -32,7 +31,7 @@ namespace Ovning5.Garage
                     Console.Write("Enter size of new garage: ");
                     correctInput = Int32.TryParse(Console.ReadLine(), out garageSize);
                     if (correctInput)
-                        _garage.Size(garageSize);
+                        _garage = new Garage<V.Vehicle>(garageSize);
                 } while (!correctInput);
             }
         }
@@ -113,7 +112,7 @@ namespace Ovning5.Garage
                 {
                     foreach (var vehicle in iVehicle)
                     {
-                        Console.WriteLine($"{vehicle.VehicleType}: Number of vehicle = {vehicle.NumberOf}");
+                        Console.WriteLine($"{vehicle.VehicleType}: {vehicle.NumberOf}");
                     }
 
                     Thread.Sleep(5000);
