@@ -20,7 +20,7 @@ namespace Ovning5.Garage
         }
 
         public int GarageSize() { return _garage!.Length; }
-        public Type GarageTyp() { return typeof(T); }
+        //public Type GarageTyp() { return typeof(T); }
 
         /*
          * Method that takes vehicle object and adds it to first space in Garage array that is null

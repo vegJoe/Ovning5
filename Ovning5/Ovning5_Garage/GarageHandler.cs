@@ -110,7 +110,7 @@ namespace Ovning5.Garage
                 {
                     foreach (var vehicle in iVehicle)
                     {
-                        Console.WriteLine(vehicle);
+                        Console.WriteLine($"{vehicle.VehicleType}: Number of vehicle = {vehicle.NumberOf}");
                     }
 
                     Thread.Sleep(5000);
@@ -223,7 +223,7 @@ namespace Ovning5.Garage
             {
                 foreach (var vehicle in iVehicle)
                 {
-                    Console.WriteLine(vehicle.GetType().Name + ": " + vehicle.NumPlate);
+                    Console.WriteLine($"{vehicle.GetType().Name}: {vehicle.NumPlate}");
                 }
                 Thread.Sleep(5000);
             }
