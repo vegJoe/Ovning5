@@ -1,13 +1,13 @@
-using Ovning5.Garage;
+using Ovning5;
 
 namespace GarageTests
 {
     public class UnitTest1
     {
         [Fact]
-        public void Test1()
+        public void TestGarage()
         {
-
+            //Assert.Equal()
         }
     }
 }

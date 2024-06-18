@@ -77,6 +77,9 @@ namespace Ovning5.Garage
         }
         private void CheckCommand(int command)
         {
+            //Resets the _vehicleIndex variable in case previous operation set it to -1 and new operation doesn't set it.
+            _vehicleIndex = 0;
+
             switch (command)
             {
                 case 1:
