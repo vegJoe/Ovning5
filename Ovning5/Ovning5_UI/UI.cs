@@ -138,7 +138,7 @@ namespace Ovning5.UI
 
         private void SubMenuEnterNumberPlate()
         {
-            WL("Enter plate number:");
+            WL("Enter number plate:");
         }
 
         private void MenuChoice()
