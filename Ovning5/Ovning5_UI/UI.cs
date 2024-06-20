@@ -28,6 +28,8 @@ namespace Ovning5.UI
                 WL("Could not park the vehicle do to insufficient vehicle information");
             else if (parkingSpot == -2)
                 WL("Garage is full, could not park vehicle");
+            else if (parkingSpot == -3)
+                WL("A vehicle with same number plate alreade exists");
             else
                 WL($"Vehicle is parked on spot nr {parkingSpot}");
 

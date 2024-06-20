@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Ovning5.Vehicle
 {
-    public class Airplane : Vehicle
+    internal class Airplane : Vehicle
     {
         private int _numOfEngines;
 

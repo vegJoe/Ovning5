@@ -8,14 +8,16 @@ namespace GarageTests
 {
     public class UnitTest1
     {
-        public Garage<Vehicle> garage;
-        public V.Airplane vehicle;
-
+        public Garage<TestClass> garage;
+        //public V.Airplane vehicle;
+        public TestClass testClass;
         public UnitTest1()
         {
-            garage = new Garage<Vehicle>(10);
-            vehicle = new V.Airplane("ABC123", "RED", 3, 2);
-            garage.AddVehicle(vehicle);
+            //garage = new Garage<Vehicle>(10);
+            garage = new Garage<TestClass>(10);
+            //vehicle = new V.Airplane("ABC123", "RED", 3, 2);
+            testClass = new TestClass();
+            garage.AddVehicle(testClass);
         }
         [Fact]
         public void TestGarageSize()
@@ -32,7 +34,7 @@ namespace GarageTests
         {
             int expected = 1;
 
-            int actual = garage.AddVehicle(vehicle);
+            int actual = garage.AddVehicle(testClass);
 
             Assert.Equal(expected, actual);
         }
@@ -42,7 +44,7 @@ namespace GarageTests
         {
             int expected = 0;
 
-            int actual = garage.FindVehicle(vehicle);
+            int actual = garage.FindVehicle(testClass);
 
             Assert.Equal(expected, actual);
         }
@@ -54,5 +56,10 @@ namespace GarageTests
 
             Assert.Empty(garage);
         }
+    }
+
+    public class TestClass
+    {
+
     }
 }

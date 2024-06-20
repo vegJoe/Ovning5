@@ -155,10 +155,17 @@ namespace Ovning5.Garage
 
         private void AddVehicle(V.Vehicle vehicle)
         {
-            if (vehicle.Colour != null && vehicle.NumPlate != "")
-                _vehicleIndex = _garage!.AddVehicle(vehicle);
+            LookUpREGNUM(vehicle.NumPlate!);
+            if (_vehicleIndex == -1)
+            {
+                if (vehicle.Colour != null && vehicle.NumPlate != "")
+                    _vehicleIndex = _garage!.AddVehicle(vehicle);
+                else
+                    _vehicleIndex = -1;
+            }
             else
-                _vehicleIndex = -1;
+                _vehicleIndex = -3;
+
         }
 
         private void RemoveVehicle(string numPlate)
